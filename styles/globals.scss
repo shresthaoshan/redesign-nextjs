@@ -1,0 +1,32 @@
+@import "variables";
+@import "font";
+@import "index";
+@import "header";
+@import "portfolio";
+@import "bottom_navigator";
+
+* {
+	box-sizing: border-box;
+
+	::selection {
+		background: rgba($color: $colorGreen, $alpha: 0.2);
+	}
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+		sans-serif;
+	font-family: $ffMain;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
