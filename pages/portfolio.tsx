@@ -1,6 +1,16 @@
 import AnimatedPage from "components/AnimatedPage";
 import React from "react";
 
+const _portfolios = [
+	{
+		title: "SOMTU",
+		type: "Web Design",
+		image: "/portfolio_images/SOMTU.png",
+		imageAlt: "SOMTU Portfolio",
+		link: "https://somtu.onemoment.codes/",
+	},
+];
+
 const Portfolio = () => {
 	return (
 		<AnimatedPage>
@@ -19,46 +29,28 @@ const Portfolio = () => {
 					</div>
 					<div className="container">
 						<div className="portfolio__content">
-							<div className="portfolio__item">
-								<div className="img__container">
-									{/* eslint-disable-next-line */}
-									<img src="/portfolio_images/SOMTU.png" alt="SOMTU Portfolio" />
-								</div>
-								<div className="portfolio__meta">
-									<div className="portfolio__info-meta">
-										<small>Web Design</small>
-										<h2>SOMTU</h2>
+							{_portfolios.map((item, index) => (
+								<div key={`portfolio_item-${index}`} className="portfolio__item">
+									<div className="img__container">
+										{/* eslint-disable-next-line */}
+										<img src={item.image} alt={item.imageAlt} />
 									</div>
-									<div className="portfolio__info-link">
-										<a target="_blank" rel="noreferrer" href="https://somtu.onemoment.codes/">
-											<button className="external__link-button">
-												{/* eslint-disable-next-line */}
-												<img src="/icons/external_link.png" alt="external link icon" />
-											</button>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div className="portfolio__item">
-								<div className="img__container">
-									{/* eslint-disable-next-line */}
-									<img src="/portfolio_images/SOMTU.png" alt="SOMTU Portfolio" />
-								</div>
-								<div className="portfolio__meta">
-									<div className="portfolio__info-meta">
-										<small>Web Design</small>
-										<h2>SOMTU</h2>
-									</div>
-									<div className="portfolio__info-link">
-										<a target="_blank" rel="noreferrer" href="https://somtu.onemoment.codes/">
-											<button className="external__link-button">
-												{/* eslint-disable-next-line */}
-												<img src="/icons/external_link.png" alt="external link icon" />
-											</button>
-										</a>
+									<div className="portfolio__meta">
+										<div className="portfolio__info-meta">
+											<small>{item.type}</small>
+											<h2>{item.title}</h2>
+										</div>
+										<div className="portfolio__info-link">
+											<a target="_blank" rel="noreferrer" href={item.link}>
+												<button className="external__link-button">
+													{/* eslint-disable-next-line */}
+													<img src="/icons/external_link.png" alt="external link icon" />
+												</button>
+											</a>
+										</div>
 									</div>
 								</div>
-							</div>
+							))}
 						</div>
 					</div>
 				</main>
