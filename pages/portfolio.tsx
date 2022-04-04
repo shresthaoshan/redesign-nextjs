@@ -7,7 +7,7 @@ const _portfolios = [
 		type: "Web Design",
 		image: "/portfolio_images/SOMTU.png",
 		imageAlt: "SOMTU Portfolio",
-		link: "https://somtu.onemoment.codes/",
+		link: "https://somtu.onemoment.codes",
 	},
 ];
 
