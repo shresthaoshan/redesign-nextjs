@@ -18,39 +18,41 @@ const BottomNavigatorItem = (props: BottomNavigatorItemProps) => {
 	const hoverState = useDebounce(isHovered, 300);
 
 	return (
-		<m.li
-			onHoverStart={() => {
-				setIsHovered(true);
-			}}
-			onHoverEnd={() => {
-				setIsHovered(false);
-			}}
-		>
-			<Link href={props.href}>
-				<a>{props.label}</a>
-			</Link>
-			<AnimatePresence>
-				{props.menu && props.menu.length ? (
-					hoverState ? (
-						<m.div
-							key={`${props.href}-hover-effect`}
-							className="list"
-							animate={{ opacity: 1, scaleY: 1 }}
-							initial={{ opacity: 0, scaleY: 0 }}
-							exit={{ opacity: 0, scaleY: 0 }}
-						>
-							<ul>
-								{props.menu.map((item, index) => (
-									<li key={index}>
-										<Link href={item.href}>{item.label}</Link>
-									</li>
-								))}
-							</ul>
-						</m.div>
-					) : null
-				) : null}
-			</AnimatePresence>
-		</m.li>
+		<Link href={props.href}>
+			<a>
+				<m.li
+					onHoverStart={() => {
+						setIsHovered(true);
+					}}
+					onHoverEnd={() => {
+						setIsHovered(false);
+					}}
+				>
+					<p style={{ margin: 0 }}>{props.label}</p>
+					<AnimatePresence>
+						{props.menu && props.menu.length ? (
+							hoverState ? (
+								<m.div
+									key={`${props.href}-hover-effect`}
+									className="list"
+									animate={{ opacity: 1, scaleY: 1 }}
+									initial={{ opacity: 0, scaleY: 0 }}
+									exit={{ opacity: 0, scaleY: 0 }}
+								>
+									<ul>
+										{props.menu.map((item, index) => (
+											<li key={index}>
+												<Link href={item.href}>{item.label}</Link>
+											</li>
+										))}
+									</ul>
+								</m.div>
+							) : null
+						) : null}
+					</AnimatePresence>
+				</m.li>
+			</a>
+		</Link>
 	);
 };
 

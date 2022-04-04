@@ -1,14 +1,149 @@
+@import "variables";
+
 .portfolio {
+	$localColor: $colorPurple;
 	width: 100%;
 
 	main {
 		width: 100%;
-        padding-top: 110px;
+		padding-top: 110px;
+		padding-bottom: 120px;
 
 		.container {
 			width: 100%;
 			max-width: 1210px;
 			margin: 0 auto;
+		}
+
+		.portfolio__head {
+			padding: 6em 0 8em 20px;
+			height: fit-content;
+			margin-bottom: 40px;
+
+			background-image: url("/backgrounds/portfolio.png");
+			background-position: bottom right;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			h1 {
+				font-family: $ffMain;
+				font-size: 1.5rem;
+				position: relative;
+				display: inline;
+				color: $localColor;
+
+				&:after {
+					content: " ";
+					width: 0%;
+					height: 3.5px;
+
+					background-color: $localColor;
+
+					position: absolute;
+					top: -6px;
+					left: 0;
+				}
+			}
+			p {
+				font-size: 3rem;
+				font-weight: 300;
+				font-family: $ffExotic;
+				margin-bottom: 0;
+				margin-top: 0.5em;
+
+				&:last-child {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+
+				span {
+					color: $localColor;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.portfolio__content {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 5fr 5fr;
+			gap: 60px;
+
+			.portfolio__item {
+				width: 100%;
+
+				h2 {
+					margin: 0px 0;
+				}
+				small {
+					color: $localColor;
+					font-size: 12px;
+				}
+
+				.img__container {
+					width: 100%;
+					padding-top: 60%;
+					background-color: $localColor;
+					position: relative;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+					}
+				}
+
+				.portfolio__meta {
+					width: 100%;
+					display: flex;
+					margin-top: 20px;
+					flex-direction: row;
+					justify-content: space-between;
+
+					.portfolio__info-link {
+						.external__link-button {
+							height: 50px;
+							width: 50px;
+							padding: 10px;
+
+							border: 1px solid #d3d3d3;
+
+							border-radius: 50%;
+							overflow: hidden;
+
+							background: #0000;
+
+							display: flex;
+							justify-content: center;
+							align-items: center;
+
+							cursor: pointer;
+
+							transition: border 0.2 linear;
+
+							img {
+								width: 80%;
+								height: 80%;
+								opacity: 0.4;
+								transition: 0.2 linear;
+							}
+
+							&:hover {
+								border: 1px solid #808080;
+
+								img {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

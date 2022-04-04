@@ -1,10 +1,16 @@
 import React from "react";
 import BottomNavigatorItem from "./BottomNavigatorItem";
+import { m } from "framer-motion";
 
 const BottomNavigator = () => {
 	return (
 		<nav>
-			<ul>
+			<m.ul
+				transition={{ delay: 1 }}
+				initial={{ scaleY: 0, opacity: 0 }}
+				animate={{ scaleY: 1, opacity: 1 }}
+				exit={{ scaleY: 0, opacity: 0 }}
+			>
 				<BottomNavigatorItem label="About Us" href="/about" />
 				<BottomNavigatorItem
 					label="Our Work"
@@ -26,7 +32,7 @@ const BottomNavigator = () => {
 				/>
 				<BottomNavigatorItem label="Our Expertise" href="/services" />
 				<BottomNavigatorItem label="Contact Us" href="/contact" />
-			</ul>
+			</m.ul>
 		</nav>
 	);
 };

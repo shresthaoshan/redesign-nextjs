@@ -8,14 +8,16 @@ const Header = () => {
 		<header>
 			<div className="header__container">
 				<m.div initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.4 }}>
-					<Image src="/logo.png" width={60} height={80} alt="Burgeon Tech Logo" />
+					<Link passHref href="/">
+						<Image style={{ cursor: "pointer" }} src="/logo.png" width={60} height={80} alt="Burgeon Tech Logo" />
+					</Link>
 				</m.div>
 				<div className="nav__menu">
 					<div className="ctas">
 						<Link passHref href="/contact?type=meeting&ref=landing">
 							<m.div
 								initial={{ opacity: 0, translateX: 120 }}
-								transition={{ delay: 0.3 }}
+								transition={{ delay: 0.6 }}
 								animate={{ opacity: 1, translateX: 0 }}
 							>
 								<button>
